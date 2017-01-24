@@ -1,7 +1,7 @@
 clear all;clc;close all;
 
 PATH_COL = 0.5;
-BOT_COL = 0.75;
+BOT_COL = .75;
 OBS_COL = 1;
 MAP_SIZE = [25 25];
 OBS_POS = [2, 2; 2, 5; 4, 10; 2, 21; 2, 24; 24, 24; 24, 17; 12, 17; 16 8; 24, 8; 24, 2];
