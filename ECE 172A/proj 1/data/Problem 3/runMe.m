@@ -6,7 +6,7 @@ OBS_COL = 1;
 MAP_SIZE = [25 25];
 OBS_POS = [2, 2; 2, 5; 4, 10; 2, 21; 2, 24; 24, 24; 24, 17; 12, 17; 16 8; 24, 8; 24, 2];
 
-BOT_DIR = 0; %Also test for BOT_DIR = 1;
+BOT_DIR = 1; %Also test for BOT_DIR = 1;
 
 curPos = OBS_POS(1,:) - [-1, -16]; %Robot starting point.
 

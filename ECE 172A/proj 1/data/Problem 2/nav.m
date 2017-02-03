@@ -13,12 +13,13 @@ while(1)
     % Make the robot move a certain direction
     nextStep = loc(end,:) + [1 0];
     
-    if haveIBeenHereBefore(loc, nextStep)
-        nextStep = loc(end,:) + [0 -1];
-    end    
+        
     
     % If there is an object to the South, move a different direction
     % START
+    if haveIBeenHereBefore(loc, nextStep)
+        nextStep = loc(end,:) + [0 -1];
+    end
     
     if detectObject(loc, obj, 'S')
         nextStep = loc(end,:) + [0 -1];

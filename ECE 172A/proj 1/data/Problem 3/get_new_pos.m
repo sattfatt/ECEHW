@@ -26,9 +26,16 @@ function [ newPos ] = get_new_pos( curPos, sensorInput, dir )
             newPos(2) = newPos(2) - 1; % move left
         end
     elseif dir == 1
-        if sensorInput(1,2) == 1
+        if (sensorInput(1,2) == 1 && sensorInput(2,1)==0)||(sensorInput(1,1)==1&&sensorInput(1,2)==0&&sensorInput(2,1)==0)
             newPos(2) = newPos(2) - 1; % Move Left
-            %newPos(1) = newPos(1) - 1; % Move Up
         end
+        if (sensorInput(3,2) == 0 && sensorInput(2,1)==1)||(sensorInput(3,1)==1&&sensorInput(3,2)==0&&sensorInput(2,1)==0)            
+            newPos(1) = newPos(1) + 1; % Move Down
+        end
+        if (sensorInput(2,3) == 1 && sensorInput(1,2)==0)||(sensorInput(1,3)==1&&sensorInput(1,2)==0&&sensorInput(2,3)==0)            
+            newPos(1) = newPos(1) - 1; % Move Up
+        end
+        if sensorInput(2,3) == 0 && (sensorInput(3,2)==1||sensorInput(3,3)==1)
+            newPos(2) = newPos(2) + 1; % Move Right            
+        end        
     end
-end

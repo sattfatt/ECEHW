@@ -1,3 +1,6 @@
+load('data.mat');
+load('label.mat')
+
 dist = zeros(5000,500);
 %diff = zeros(5000,500);
 for i = 1:500
@@ -35,8 +38,13 @@ for c = 0:9
        end
     end
     PgC(c+1)=errorcount/total;
-    PE = totalerrorcount/500;
+    PE = totalerrorcount/500
 end
+
+figure;
+bar(0:9,PgC)
+xlabel('Class')
+ylabel('P(error|Class)')
 %%
 count = 0;
 for i=1:500

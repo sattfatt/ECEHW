@@ -4,14 +4,14 @@ A = [2 59 2 5
     41 11 0 4
     18 2 3 9
     6 23 27 10
-    5 8 5 1];
+    5 8 5 1]
 B = [0 1 0 1
      0 1 1 1
      0 0 0 1
      1 1 0 1
-     0 1 0 0];
+     0 1 0 0]
  % (ii) pointwise multiply
- C = A.*B;
+ C = A.*B
  % (iii)     
  C(2,:)*C(5,:)'
  % (iv) 
@@ -28,7 +28,6 @@ B = [0 1 0 1
  V = min(min(D))
  
  %% problem 2
- clear all
  % (i)
  % -loc is the position of the white square
  % -based on adding vector [1,0] the robot should move down by 1
