@@ -12,5 +12,7 @@ function [curPos, route, dest, explore_map] = update_position(curPos, route, des
 % so that runMe.m can actually run without having written the functions yet
 curPos = curPos + randi([-1 1],[1 2]);
 
+
+
 end
 

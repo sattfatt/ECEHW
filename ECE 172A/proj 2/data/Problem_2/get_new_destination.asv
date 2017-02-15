@@ -7,14 +7,13 @@ function dest = get_new_destination(curPos, unexplored_areas)
 
 % The lines below are not part of the solution and are only written here
 % so that runMe.m can actually run without having written the functions yet
-%dest = unexplored_areas(randi(size(unexplored_areas,1)),:);
+dest = unexplored_areas(randi(size(unexplored_areas,1)),:);
 
 sizeofunexplored = size(unexplored_areas,1);
 distances = zeros(sizeofunexplored,1);
 for i = 1:sizeofunexplored
-    distances(i) = sqrt((curPos(1)-unexplored_areas(i,1))^2 + (curPos(2)-unexplored_areas(i,2))^2);
+    distances(i) = sqrt((curpos(1,1)-unexplored(i,1))^2 + (curpos(1,1)-unexplored(i,1))^2);
 end
-minindex = min(distances);
-dest = unexplored_areas(minindex,:);
+
 end
 
