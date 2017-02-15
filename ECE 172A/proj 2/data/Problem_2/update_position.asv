@@ -11,8 +11,8 @@ function [curPos, route, dest, explore_map] = update_position(curPos, route, des
 % The lines below are not part of the solution and are only written here
 % so that runMe.m can actually run without having written the functions yet
 %curPos = curPos + randi([-1 1],[1 2]);
-curPos = route(1,:);
-explore_map(route(1,1),route(1,2)) = MAPPED;
+curPos = route(1,:)
+explore_map(route(1,:)) = 0.45;
 if curPos == dest
     dest = [];
 end

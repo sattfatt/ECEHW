@@ -14,7 +14,7 @@ distances = zeros(sizeofunexplored,1);
 for i = 1:sizeofunexplored
     distances(i) = sqrt((curPos(1)-unexplored_areas(i,1))^2 + (curPos(2)-unexplored_areas(i,2))^2);
 end
-minindex = min(distances);
-dest = unexplored_areas(minindex,:);
+minindex = find(distances==min(distances));
+dest = unexplored_areas(datasample(minindex,1),:);
 end
 

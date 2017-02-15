@@ -9,15 +9,11 @@ function unexplored_areas = get_unexplored_areas(explore_map, UNMAPPED)
 
 % The lines below are not part of the solution and are only written here
 % so that runMe.m can actually run without having written the functions yet
-% [cols,rows] = ...
-%     meshgrid(1:size(explore_map,2),1:size(explore_map,1));
-
+[cols,rows] = ...
+    meshgrid(1:size(explore_map,2),1:size(explore_map,1));
 sizeofmap = [size(explore_map,1),size(explore_map,2)];
 linindices = find(explore_map==UNMAPPED);
-if isempty(linindices)
-    unexplored_areas = [];
-    return
-end
+
 [i,j] = ind2sub(sizeofmap,linindices);
 unexplored_areas = [i,j];
 
