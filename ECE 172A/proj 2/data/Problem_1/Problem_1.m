@@ -1,9 +1,9 @@
 clc; clear; close all;
 
-initial_loc = [1,1];
+initial_loc = [0,0];
 cur_loc = initial_loc;
 final_loc = [100,100];
-mu = [60, 50; 10, 40];
+mu = [30, 20; 70, 80];
 sigma = [50, 0; 0, 50];
 
 % Set up vector potential field
@@ -41,16 +41,22 @@ zlabel('z');
 % Use x, y, and z(x, y) to plot the vector field.
 figure
 mesh(x,y,z(x,y))
-figure;
+hold on;
+plot3(initial_loc(1),initial_loc(2),z(initial_loc(1),initial_loc(2)),'b*:');
+plot3(100,100,z(100,100),'r*:');
+
+figure
 contour(x,y,z(x,y))
 hold on;
 % b) Plot the gradient (dx, dy) as quivers over the contour plot
 % Use x, y, dx(x,y), and dy(x,y) to plot the quivers
 quiver(x,y,dx(x,y),dy(x,y))
+
 % c) Indicate where the bot will begin, blue asterisk, and where the
 % bot will finish, red asterisk. (Look through the code).
 plot(initial_loc(1),initial_loc(2),'b*:');
 plot(100,100,'r*:');
+hold off;
 %% Part 2
 % Implement the algorithm from the discussion slides to control the bot
 % through the vector field helping it reach it's final location.
